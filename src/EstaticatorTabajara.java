@@ -14,7 +14,22 @@ public class EstaticatorTabajara {
 		
 		//REFERENTE A ENTRADA DE DADOS
 		while(!(texto = entrada.nextLine()).equals("")) { //Loop de entrada de texto que será executado até o usuario apertar enter sem digitar nada, o que caracteriza uma string vazia
-			amostra.add(Float.valueOf(texto)); //Converte o texto que foi entrado para Float e insere na lista
+			char[] caracteres = texto.toCharArray();
+			boolean roda = true;
+			int indice = 0;
+			for(char caracter : caracteres) {
+				if((caracter >= '0' && caracter <= '9') || caracter == '.' || caracter == '-') {
+					if(indice > 0 && caracter == '-') { roda = false; } 
+				} else {
+					roda = false;
+				}				
+			}
+			if(roda) {
+				amostra.add(Float.valueOf(texto)); //Converte o texto que foi entrado para Float e insere na lista
+			} else {
+				System.out.println("Digite um valor valido"); //Avisa que foi digitado um valor invalido
+			}
+			indice++;
 		}
 		
 		System.out.println("\nEntrada de dados finalizada\n\n"); //Avisa o término do loop e consequentemente da entrada de dados
