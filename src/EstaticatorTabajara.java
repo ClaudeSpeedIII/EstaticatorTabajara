@@ -36,6 +36,8 @@ public class EstaticatorTabajara {
 				if(numero > maior) { maior = numero; } //Vai substituindo o valor da variavel maior, pelo item atual, caso for maior que o ultimo valor
 			}
 			
+			System.out.println("Soma: " + somaTudo); //Exibe a soma de todos os valores
+			
 			media = somaTudo / amostra.size(); //Calcula a média de todos os itens da lista
 			
 			//REFERENTE AO CALCULO DE VARIANCIA
